@@ -1,0 +1,85 @@
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    font-family: sans-serif;
+    background-color: #315481;
+    background-image: linear-gradient(to bottom, #315481, #dddddd 100%);
+    background-attachment: fixed;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    padding: 0;
+    margin: 0;
+
+    font-size: 14px;
+}
+.white-background {
+    background-color: white;
+}
+.white-color {
+    color: white;
+}
+.space-top-50{
+    margin-top: 50px;
+}
+
+.space-top-70{
+    margin-top: 70px;
+}
+
+.border-top {
+    border-top: solid 1px #dddddd;
+}
+.border-bottom {
+    border-bottom: solid 1px #dddddd;
+}
+.border-right {
+    border-right: solid 1px #dddddd;
+}
+.border-left {
+    border-left: solid 1px #dddddd;
+}
+.border-left-right-bottom {
+    border-left: solid 1px #dddddd;
+    border-right: solid 1px #dddddd;
+    border-bottom: solid 1px #dddddd;
+}
+
+.space-top-5 {
+    margin-top: 5px;
+}
+.space-top-10 {
+    margin-top: 10px;
+}
+.space-top-15 {
+    margin-top: 15px;
+}
+.space-top-20 {
+    margin-top: 5px;
+}
+.padding-top-10 {
+    padding-top: 10px;
+}
+.padding-top-20 {
+    padding-top: 20px;
+}
+
+.padding-10 {
+    padding: 10px;
+}
+
+.chat-panel {
+    overflow: scroll;
+}
+.simple-todos {
+    max-width: 600px;
+    margin: 0 auto;
+    min-height: 100%;
+    background: white;
+}

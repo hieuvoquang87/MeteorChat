@@ -1,0 +1,73 @@
+.simple-todos {
+    background: #d2edf4;
+    background-image: linear-gradient(to bottom, #d0edf5, #eeeeee 100%);
+    padding: 20px 15px 15px 15px;
+    position: relative;
+    height: 100%;
+}
+
+#login-buttons {
+    display: block;
+}
+.todo-list {
+    margin: 0;
+    padding: 0;
+    background: white;
+}
+.todo-item {
+    position: relative;
+    list-style: none;
+    padding: 15px;
+    border-bottom: #eee solid 1px;
+}
+li .text {
+    margin-left: 10px;
+}
+
+li.checked {
+    color: #888;
+}
+
+li.checked .text {
+    text-decoration: line-through;
+}
+
+li.private {
+    background: #eee;
+    border-color: #ddd;
+}
+
+h1 {
+    font-size: 1.5em;
+    margin: 0;
+    margin-bottom: 10px;
+    display: inline-block;
+    margin-right: 1em;
+}
+
+.new-task input {
+    box-sizing: border-box;
+    padding: 10px 0;
+    background: transparent;
+    border: none;
+    width: 100%;
+    padding-right: 80px;
+    font-size: 1em;
+}
+
+.new-task input:focus{
+    outline: 0;
+}
+
+.delete {
+    float: right;
+    font-weight: bold;
+    background: none;
+    font-size: 1em;
+    border: none;
+    position: relative;
+}
+
+.toggle-private {
+    margin-left: 5px;
+}
