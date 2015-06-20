@@ -1,0 +1,79 @@
+<template name="home">
+    <div class="container" style="padding-top: 20px">
+        {{#if currentUser}}
+            <div class="col-lg-3 col-md-3 col-sm-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Friends</h3>
+                    </div>
+                    <ul class="list-group" style="max-height: 500px; overflow: auto">
+                        {{#each friends}}
+                            {{> friend}}
+                        {{/each}}
+                    </ul>
+                </div>
+                <label class="white-color">Send Friend Request</label>
+                <form id="send-request" class="input-group" style="margin-bottom: 10px">
+                    <input class="form-control" name="friendName" type="text" placeholder="Friend Name" required/>
+                    <span class="input-group-btn">
+                        <input type="submit" class="btn btn-primary pull-right" value="Send"/>
+                    </span>
+                </form>
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-8">
+                {{#if chatPanels}}
+                    <ul class="nav nav-tabs nav-justified">
+                        {{#each chatPanels}}
+                            <li role="presentation" class="{{#if isCurrentSelectedPanel}}active{{/if}}">
+                                <a class="select-panel">
+                                    <span>{{name}}</span> &nbsp;
+                                    <span class="remove-panel" style="cursor: pointer">&times;</span>
+                                </a>
+                            </li>
+                        {{/each}}
+                    </ul>
+                    <div class="border-left-right-bottom padding-10 white-background">
+                        {{> chatPanel}}
+                    </div>
+                {{/if}}
+            </div>
+        {{else}}
+            <h1 class="white-color">Welcome To Meteor Chat</h1>
+
+            <p class="white-color">Please Sign In</p>
+        {{/if}}
+    </div>
+</template>
+
+<template name="friend">
+    {{#if this.isAccepted}}
+        <a class="list-group-item on-friend-selected">
+            {{name}}
+        </a>
+    {{else}}
+        <li class="list-group-item">
+            {{name}}
+            <div>
+                <button class="accept-request-btn">Accept</button>
+                <button class="reject-request-btn">Reject</button>
+            </div>
+        </li>
+    {{/if}}
+</template>
+<template name="chatPanel">
+    <div style="height: 400px" class="border-left-right-bottom border-top padding-10 chat-panel">
+        {{#each messages}}
+            <p>
+                <span class="username">{{sender}}:</span>
+                {{content}}
+                <span class="timestamp">&ndash; {{livestamp createdAt}}</span>
+            </p>
+        {{/each}}
+    </div>
+    <form id="message-input" class="input-group space-top-10">
+        <input type="text" name="message" class="form-control" placeholder="Type message...">
+      <span class="input-group-btn">
+        <input type="submit" class="btn btn-primary" value="Send"/>
+      </span>
+    </form>
+</template>

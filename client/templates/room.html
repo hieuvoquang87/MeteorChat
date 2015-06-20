@@ -1,0 +1,52 @@
+<template name="room">
+    <div class="container padding-top-20">
+        <div class="row">
+            <div class="col-lg-3 col-md-3">
+                <ul class="list-group white-background">
+                    {{#if roomusers}}
+                        {{#each roomusers}}
+                            {{#if away}}
+                                <li class="list-group-item away">{{user}} <span>&ndash; away</span></li>
+                            {{else}}
+                                <li class="list-group-item">{{user}}</li>
+                            {{/if}}
+                        {{/each}}
+                    {{/if}}
+                </ul>
+            </div>
+
+            <div class="col-lg-9 col-md-9">
+                <div class="white-background padding-10">
+                    {{#each messages}}
+                        <p>
+                            <span class="username">{{sender}}:</span>
+                            {{content}}
+                            <span class="timestamp">&ndash; {{livestamp createdAt}}</span>
+                        </p>
+                    {{/each}}
+                </div>
+                <div>
+                    <p class="pull-left white-color space-top-5">
+                        Logged in as: <b>{{currentUser}}</b>
+                    </p>
+
+                    <p class="pull-right white-color">
+                        <input type="checkbox" class="away-toggle"/>
+                        <label>Set away</label>
+                    </p>
+
+                    <form id="add-message">
+                        <div class="form-group">
+                            <textarea class="form-control" name="message" placeholder="Write a message"></textarea>
+                        </div>
+                        <div class="form-group clearfix">
+                            <input type="submit" class="btn btn-primary pull-right send-message" style="margin-left: 10px;"
+                                   value="Send message"/>
+                            <a href="" class="btn btn-danger pull-right">Disconnect</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
